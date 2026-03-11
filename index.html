@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>세월복원 홈케어</title>
+    <link rel="stylesheet" href="style.css?v=2.1">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="site-wrapper">
+        <!-- Command Header -->
+        <header class="command-header">
+            <div class="header-inner">
+                <div class="header-left">
+                    <div class="app-logo">세월복원</div>
+                </div>
+                <nav class="app-nav">
+                    <button class="btn-main-gold"
+                        onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">무료 방문 견적
+                        신청하기</button>
+                </nav>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <!-- 1. Hero / Dashboard Overview -->
+            <section id="system-overview" class="dash-hero reveal">
+                <div class="hero-terminal hero-vertical">
+                    <div class="terminal-top">
+                        <h1 class="hero-title">우리집의 가치를 되살리는 <br><span
+                                class="gold-text">프리미엄 복원 전문가, 세월복원</span>
+                        </h1>
+                        <p class="hero-desc">마루 찍힘부터 현관문 기스, 대리석 깨짐까지. 교체 비용 없이 감쪽같이 복원해 드립니다.</p>
+                        <div class="hero-actions">
+                            <button class="btn-main-gold"
+                                onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})"><i
+                                    class="fas fa-hammer"></i> 무료 복원 견적 신청하기</button>
+                        </div>
+                    </div>
+                    <div class="terminal-bottom">
+                        <div class="data-grid horizontal-grid">
+                            <div class="data-cell">
+                                <span class="data-label">누적 복원 완료</span>
+                                <span class="data-value gold-text"><span class="counter" data-target="3520">0</span>
+                                    <small class="unit">건+</small></span>
+                            </div>
+                            <div class="data-cell">
+                                <span class="data-label">고객 만족도</span>
+                                <span class="data-value"><span class="counter" data-target="99">0</span><span style="font-size: 1.2rem;">.8</span> <small
+                                        class="unit">%</small></span>
+                            </div>
+                            <div class="data-cell">
+                                <span class="data-label">긴급 복원 출동</span>
+                                <span class="data-value">당일 <small class="unit">가능</small></span>
+                            </div>
+                            <div class="data-cell">
+                                <span class="data-label">복원 경력</span>
+                                <span class="data-value"><span class="counter" data-target="11">0</span> <small
+                                        class="unit">년</small></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. 세월복원 경쟁력 (차별점) -->
+            <section id="differentiators" class="dash-section reveal">
+                <div class="section-meta">02. 세월복원 프리미엄 복원 시스템</div>
+                <div class="diff-stacked">
+                    <div class="diff-row">
+                        <div class="diff-num">01</div>
+                        <div class="diff-content">
+                            <h3>독보적인 미세 조색 기술</h3>
+                            <p>기존 마루나 대리석의 패턴과 색상을 <strong>정밀하게 분석하고 주변과 동일하게 조색하여</strong> 수리한 티가 나지 않습니다.</p>
+                        </div>
+                        <div class="diff-image-box"
+                            style="background-image: url('2단계/1.jpg'); background-size: cover; background-position: center;">
+                        </div>
+                    </div>
+                    <div class="diff-row">
+                        <div class="diff-num">02</div>
+                        <div class="diff-content">
+                            <h3>친환경 프리미엄 복원제</h3>
+                            <p>실내 주거공간에서 이루어지는 작업인 만큼, <strong>냄새와 유해물질이 없는 친환경/무독성 소재만</strong>을 고집합니다.</p>
+                        </div>
+                        <div class="diff-image-box"
+                            style="background-image: url('2단계/2.jpg'); background-size: cover; background-position: center;">
+                        </div>
+                    </div>
+                    <div class="diff-row">
+                        <div class="diff-num">03</div>
+                        <div class="diff-content">
+                            <h3>100% 만족하는 완벽한 마감</h3>
+                            <p>단순히 메꾸는 것이 아닙니다. <strong>질감과 광택까지 주변과 동일하게 맞추는</strong> 장인 정신으로 완벽하게 마감합니다.</p>
+                        </div>
+                        <div class="diff-image-box"
+                            style="background-image: url('2단계/3.jpg'); background-size: cover; background-position: center;">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. 실시간 작업 일지 (Live Portfolio Ticker) -->
+            <section id="portfolio" class="dash-section reveal">
+                <div class="section-meta">03. 복원 포트폴리오</div>
+                <div class="ticker-container" id="portfolio-drag-container">
+                    <!-- Top Row: Scrolls Right (Requires drag logic in JS) -->
+                    <div class="ticker-track top-track" id="log-ticker-top">
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL', 1, 14, '거실 강마루 긁힘 복원')">
+                            <div class="portfolio-thumb"
+                                style="background-image: url('premium_assets/matrix_floor.png');"></div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>거실 강마루 긁힘 복원</h4>
+                                <span class="auto-date" data-days="0"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL', 2, 11, '현관문 도어락 구멍 복원')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_door.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>현관문 도어락 구멍 복원</h4>
+                                <span class="auto-date" data-days="-1"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL', 3, 14, '대리석 식탁 모서리 깨짐 복원')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_marble.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>대리석 식탁 모서리 깨짐 복원</h4>
+                                <span class="auto-date" data-days="-2"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL', 4, 12, '아트월 TV 벽걸이 구멍 복원')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_wall.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>아트월 TV 벽걸이 구멍 복원</h4>
+                                <span class="auto-date" data-days="-3"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL', 5, 12, '화장실 타일 금감 복원')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_marble.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>화장실 타일 금감 복원</h4>
+                                <span class="auto-date" data-days="-4"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL', 6, 11, '정수기 타공 구멍 메꿈')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_wall.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>정수기 타공 구멍 메꿈</h4>
+                                <span class="auto-date" data-days="-5"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Row: Scrolls Left -->
+                    <div class="ticker-track bottom-track" id="log-ticker-bottom">
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL2', 1, 11, '강마루 찍힘 복원')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_floor.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>강마루 찍힘 복원</h4>
+                                <span class="auto-date" data-days="-3"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL2', 2, 11, '문틀 파손 복원')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_door.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>문틀 파손 복원</h4>
+                                <span class="auto-date" data-days="-4"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL2', 3, 8, '대리석 세면대 깨짐 복원')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_marble.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>대리석 세면대 깨짐 복원</h4>
+                                <span class="auto-date" data-days="-5"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL2', 4, 8, '방문 스크래치 제거')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_door.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>방문 스크래치 제거</h4>
+                                <span class="auto-date" data-days="-6"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL2', 5, 13, '싱크대 상판 크랙 보수')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_marble.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>싱크대 상판 크랙 보수</h4>
+                                <span class="auto-date" data-days="-8"></span>
+                            </div>
+                        </div>
+                        <div class="ticker-item" onclick="openPortfolioModal('POPOL2', 6, 11, '에어컨 배관 구멍 복원')">
+                            <div class="portfolio-thumb" style="background-image: url('premium_assets/matrix_wall.png');">
+                            </div>
+                            <div class="ticker-info">
+                                <span class="log-status badge-success">복원완료</span>
+                                <h4>에어컨 배관 구멍 복원</h4>
+                                <span class="auto-date" data-days="-10"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Core Restoration Categories (Service Matrix) -->
+            <section id="service-matrix" class="dash-section reveal">
+                <div class="section-meta">04. 4대 핵심 복원 서비스</div>
+                <div class="matrix-grid">
+                    <div class="matrix-card">
+                        <div class="empty-img-placeholder-small"
+                            style="background-image: url('premium_assets/matrix_floor.png'); background-size: cover; background-position: center;">
+                        </div>
+                        <h3>마루 찍힘 복원</h3>
+                        <p>강마루, 강화마루, 원목마루 등 바닥재의 찍힘, 긁힘, 변색을 새것처럼 복원합니다.</p>
+                    </div>
+                    <div class="matrix-card">
+                        <div class="empty-img-placeholder-small"
+                            style="background-image: url('premium_assets/matrix_door.png'); background-size: cover; background-position: center;">
+                        </div>
+                        <h3>현관문 기스 복원</h3>
+                        <p>이삿짐 운반이나 반려동물로 인해 발생한 방화문/현관문의 스크래치와 찌그러짐을 완벽하게 잡아냅니다.</p>
+                    </div>
+                    <div class="matrix-card">
+                        <div class="empty-img-placeholder-small"
+                            style="background-image: url('premium_assets/matrix_marble.png'); background-size: cover; background-position: center;">
+                        </div>
+                        <h3>식탁 및 타일 깨짐 복원</h3>
+                        <p>천연 대리석, 인조 대리석 식탁 모서리 깨짐 및 화장실/베란다 타일의 금가고 파인 곳을 단단하게 메꿉니다.</p>
+                    </div>
+                    <div class="matrix-card">
+                        <div class="empty-img-placeholder-small"
+                            style="background-image: url('premium_assets/matrix_wall.png'); background-size: cover; background-position: center;">
+                        </div>
+                        <h3>정수기 및 아트월 구멍 복원</h3>
+                        <p>정수기 철거 후 남은 타공 구멍, 벽걸이 TV 설치로 뚫린 거실 아트월 구멍의 무늬까지 맞춰 복원합니다.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Government Support Terminal -->
+            <section id="gov-support" class="dash-section reveal" style="display: none;">
+                <!-- Removing the government support section for now since user wants it to be FAQ, which is section 6 -->
+            </section>
+
+            <!-- 6. FAQ (Frequently Asked Questions) -->
+            <section id="faq" class="dash-section reveal">
+                <div class="section-meta">05. 세월복원 서비스 가이드 및 자주 묻는 질문 베스트</div>
+                <div class="faq-layout">
+                    <div class="faq-header">
+                        <i class="fas fa-comments icon-large"></i>
+                        <h3>홈케어 복원 FAQ</h3>
+                        <p>고객님들이 가장 많이 묻는 질문을 모았습니다.</p>
+                    </div>
+                    <div class="accordion-list">
+                        <div class="acc-item">
+                            <div class="acc-q" onclick="this.classList.toggle('active')">
+                                <span>사진만 보내도 견적이 가능한가요?</span> <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="acc-a">
+                                <p>네, 가능합니다. 복원을 원하시는 부위를 멀리서 1장, 가까이서 1장 선명하게 찍어서 [010-3433-5544]로 보내주시면 빠르고 정확한 가견적을 안내해 드립니다.</p>
+                            </div>
+                        </div>
+                        <div class="acc-item">
+                            <div class="acc-q" onclick="this.classList.toggle('active')">
+                                <span>복원 후 티가 많이 날까요?</span> <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="acc-a">
+                                <p>세월복원만의 미세 조색 기술과 정밀한 무늬 스케치 작업을 통해 90% 이상 주변과 이질감 없이 복원됩니다. 자세히 들여다보지 않는 이상 교체한 것과 같은 퀄리티를 경험하실 수 있습니다.</p>
+                            </div>
+                        </div>
+                        <div class="acc-item">
+                            <div class="acc-q" onclick="this.classList.toggle('active')">
+                                <span>소음이나 먼지가 많이 발생하나요? 살고 있는 집인데 괜찮을까요?</span> <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="acc-a">
+                                <p>부분 복원 작업이므로 대대적인 철거 공사와 달리 소음과 분진이 거의 없습니다. 집진 장비와 보양 작업을 철저히 병행하므로 거주 중인 댁에서도 아무 문제 없이 당일 깔끔하게 시공이 완료됩니다.</p>
+                            </div>
+                        </div>
+                        <div class="acc-item">
+                            <div class="acc-q" onclick="this.classList.toggle('active')">
+                                <span>오래된 마루나 단종된 자재도 복원이 되나요?</span> <i class="fas fa-plus"></i>
+                            </div>
+                            <div class="acc-a">
+                                <p>교체가 불가능한 단종 자재일수록 복원이 빛을 발합니다. 기존 자재의 퇴색된 색상과 마모된 질감까지 현장에서 그대로 맞춰 조색하므로 오래된 자재일수록 더욱 강력히 추천해 드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final Dashboard Command (Contact/CTA) -->
+            <section id="contact" class="dash-final reveal">
+                <div class="final-inner">
+                    <h2>눈에 거슬리는 상처, <span class="gold-text">교체 없이 완벽하게.</span><br><span class="gold-text">세월복원</span>이 집의 가치를 되살려 드립니다.</h2>
+                    <div class="final-actions double-action">
+                        <!-- Mobile Buttons -->
+                        <div class="mobile-contact-group">
+                            <a href="sms:010-3433-5544" class="btn-main-gold outline-btn" style="flex: 1; text-align: center; color: #000; font-weight: 700;"><i
+                                    class="fas fa-comment-sms"></i> 사진 보내고 견적 받기</a>
+                            <a href="tel:010-3433-5544" class="btn-main-gold fill-btn" style="flex: 1; text-align: center; color: #000; font-weight: 700;"><i
+                                    class="fas fa-phone-volume"></i> 바로 전화 문의하기</a>
+                        </div>
+                        <!-- PC Button -->
+                        <div class="pc-contact-group">
+                            <a href="#"
+                                onclick="alert('PC 환경에서는 즉시 전화 연결이 지원되지 않습니다.\n[010-3433-5544] 번호로 파손 부위 사진과 함께 문자를 남겨주시면 신속하게 답변해 드리겠습니다.'); return false;"
+                                class="btn-main-gold"><i class="fas fa-phone-volume"></i> 010 3433 5544</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>Copyright ⓒ 세월복원 홈케어 (SEWOL RESTORATION) All rights reserved. Premium Home Care & Restoration</p>
+        </footer>
+    </div>
+
+    <!-- 프로젝트 상세 모달 -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">프로젝트 상세 브리핑</span>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <iframe id="project-iframe" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Image Modal -->
+    <div id="portfolio-modal" class="port-modal-overlay" onclick="closePortfolioModal()">
+        <div class="port-modal-content" onclick="event.stopPropagation()">
+            <div class="port-modal-header">
+                <span class="port-modal-title">현장 포트폴리오 <span class="gold-text">완료 뷰어</span></span>
+                <span class="port-close-btn" onclick="closePortfolioModal()">&times;</span>
+            </div>
+            <div class="port-modal-gallery" id="port-modal-gallery">
+                <!-- Images injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 날짜 자동 설정 및 티커 복제
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateElements = document.querySelectorAll('.auto-date');
+            const today = new Date();
+
+            dateElements.forEach(el => {
+                const daysOffset = parseInt(el.getAttribute('data-days') || 0);
+                const targetDate = new Date(today);
+                targetDate.setDate(today.getDate() + daysOffset);
+
+                const yyyy = targetDate.getFullYear();
+                const mm = String(targetDate.getMonth() + 1).padStart(2, '0');
+                const dd = String(targetDate.getDate()).padStart(2, '0');
+
+                el.textContent = `${yyyy}.${mm}.${dd}`;
+            });
+
+            // Portfolio Drag & Auto Scroll Logic
+            const setupDragScroll = (trackId, direction) => {
+                const track = document.getElementById(trackId);
+                if (!track) return;
+
+                track.innerHTML += track.innerHTML; // duplicate for infinite scroll
+
+                let isDown = false;
+                let startX;
+                let scrollLeft;
+                let scrollState = 'auto'; // 'auto' or 'drag'
+                let autoScrollInterval;
+                const speed = 0.5;
+                let exactScrollLeft = 0;
+
+                const startAutoScroll = () => {
+                    if (scrollState !== 'auto') return;
+                    // Reset exact tracker when starting auto scroll to avoid jumping
+                    exactScrollLeft = track.scrollLeft;
+                    autoScrollInterval = requestAnimationFrame(scrollFn);
+                };
+
+                const stopAutoScroll = () => {
+                    cancelAnimationFrame(autoScrollInterval);
+                };
+
+                const scrollFn = () => {
+                    if (scrollState === 'auto') {
+                        if (direction === 'left') {
+                            exactScrollLeft += speed;
+                            if (exactScrollLeft >= track.scrollWidth / 2) {
+                                exactScrollLeft = 0;
+                            }
+                        } else {
+                            // direction right
+                            exactScrollLeft -= speed;
+                            if (exactScrollLeft <= 0) {
+                                exactScrollLeft = track.scrollWidth / 2;
+                            }
+                        }
+                        track.scrollLeft = exactScrollLeft;
+                        autoScrollInterval = requestAnimationFrame(scrollFn);
+                    }
+                };
+
+                // Mouse Events
+                track.addEventListener('mousedown', (e) => {
+                    isDown = true;
+                    scrollState = 'drag';
+                    stopAutoScroll();
+                    track.classList.add('active-drag');
+                    startX = e.pageX - track.offsetLeft;
+                    scrollLeft = track.scrollLeft;
+                });
+
+                track.addEventListener('mouseleave', () => {
+                    isDown = false;
+                    track.classList.remove('active-drag');
+                    scrollState = 'auto';
+                    startAutoScroll();
+                });
+
+                track.addEventListener('mouseup', () => {
+                    isDown = false;
+                    track.classList.remove('active-drag');
+                    scrollState = 'auto';
+                    startAutoScroll();
+                });
+
+                track.addEventListener('mousemove', (e) => {
+                    if (!isDown) return;
+                    e.preventDefault();
+                    const x = e.pageX - track.offsetLeft;
+                    const walk = (x - startX) * 2; // scroll-fast
+                    track.scrollLeft = scrollLeft - walk;
+                    exactScrollLeft = track.scrollLeft; // Sync exact tracker
+                });
+
+                // Touch Events for Mobile Swiping
+                track.addEventListener('touchstart', (e) => {
+                    isDown = true;
+                    scrollState = 'drag';
+                    stopAutoScroll();
+                    track.classList.add('active-drag');
+                    startX = e.touches[0].pageX - track.offsetLeft;
+                    scrollLeft = track.scrollLeft;
+                }, { passive: true });
+
+                track.addEventListener('touchend', () => {
+                    isDown = false;
+                    track.classList.remove('active-drag');
+                    scrollState = 'auto';
+                    startAutoScroll();
+                });
+
+                track.addEventListener('touchmove', (e) => {
+                    if (!isDown) return;
+                    const x = e.touches[0].pageX - track.offsetLeft;
+                    const walk = (x - startX) * 2; // scroll-fast
+                    track.scrollLeft = scrollLeft - walk;
+                    exactScrollLeft = track.scrollLeft; // Sync exact tracker
+                }, { passive: true });
+
+                // Hover Events to stop/start
+                track.addEventListener('mouseenter', stopAutoScroll);
+
+                // Init
+                if (direction === 'right') {
+                    track.scrollLeft = track.scrollWidth / 2;
+                }
+                startAutoScroll();
+            };
+
+            setupDragScroll('log-ticker-top', 'right');
+            setupDragScroll('log-ticker-bottom', 'left');
+        });
+
+        // Portfolio Modal Logic
+        function openPortfolioModal(prefix, folderNum, imgCount, title) {
+            const modal = document.getElementById('portfolio-modal');
+            const gallery = document.getElementById('port-modal-gallery');
+
+            // Clear existing images
+            gallery.innerHTML = '';
+
+            // Inject new images
+            for (let i = 1; i <= imgCount; i++) {
+                const img = document.createElement('img');
+                img.src = `${prefix}/${folderNum}/${i} ${title}.jpg`;
+                img.alt = `Portfolio Image ${i} - ${title}`;
+
+                img.onerror = function () {
+                    const fallbackSrc = `${prefix}/${folderNum}/${i}.jpg`;
+                    if (!this.src.includes(fallbackSrc)) {
+                        this.src = fallbackSrc;
+                    } else {
+                        this.style.display = 'none';
+                    }
+                };
+                gallery.appendChild(img);
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closePortfolioModal() {
+            const modal = document.getElementById('portfolio-modal');
+            modal.classList.remove('active');
+            document.body.style.overflow = ''; // Restore background scrolling
+        }
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
